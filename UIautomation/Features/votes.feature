@@ -7,10 +7,11 @@ Background:
 
 
 @vote @smoke
-Scenario: User can vote for most popular car
+Scenario: User can vote for most popular car and vote count is increased
 	Given I go to the popular model page
 	When I vote the model without comment
 	Then I verify vote successful
+	And I verfiy vote count is increment
 
 @vote
 Scenario: User can vote for Mito

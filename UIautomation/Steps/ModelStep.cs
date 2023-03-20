@@ -20,6 +20,8 @@ namespace UIautomation.Steps
         [When(@"I vote the model without comment")]
         public void IVoteTheModelWithoutComment()
         {
+            var PrevCount = _page.GetVoteCount();
+            ScenarioContext.Current.Add("PrevVoteCount", PrevCount);
             _page.VoteWithoutComment();
         }
 
@@ -42,6 +44,13 @@ namespace UIautomation.Steps
         public void IVerfiyTheCommentIsDisplayedInTheTableList()
         {
             _page.AssertCommentIsDisplayed((string)ScenarioContext.Current["Comment"], (string)ScenarioContext.Current["UserName"]);
+        }
+
+        [Then(@"I verfiy vote count is increment")]
+        public void IVerfigyVoteCountIsIncrement()
+        {
+            string PrevCount = (string)ScenarioContext.Current["PrevVoteCount"];
+            _page.AssertVoteCountIncrement(PrevCount);
         }
     }
 }

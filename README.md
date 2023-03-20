@@ -40,6 +40,7 @@ The goal of this project is to demo automation test sets for a web application. 
 Visual Studio needs a little extra configuration. Install these extensions;
 - NUnit
 - SpecFlow
+- add vstest.concole.exe to Environment Path if run through the command line
 
 
 ### Git clone
@@ -65,9 +66,9 @@ Build:
 > msbuild .\BuggyRatingTests.sln
 ```
 
-Run tests by NUnit3
+Run tests by VSTest
 ```
-> nunit3-console.exe --labels=All --out=TestResult.txt "--result=TestResult.xml;format=nunit2" UIautomation\bin\Debug\netcoreapp3.1\E2EUIautomation.dll
+> vstest.console.exe UIautomation\bin\Debug\netcoreapp3.1\E2EUIautomation.dll /Logger:trx
 ```
 
 Run tests by SpecFlow
