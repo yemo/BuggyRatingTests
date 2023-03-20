@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BuggyRatingTests/UIautomation/bin
+/BuggyRatingTests/UIautomation/obj
+/BuggyRatingTests/.vs/BuggyRatingTests
